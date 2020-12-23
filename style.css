@@ -13,6 +13,7 @@ Variables
 
 :root {
   /* dark shades of primary color*/
+  --clr-blue: rgb(0, 14, 103);
   --clr-primary-1: hsl(43, 86%, 17%);
   --clr-primary-2: hsl(43, 77%, 27%);
   --clr-primary-3: hsl(43, 72%, 37%);
@@ -127,6 +128,13 @@ p {
     line-height: 1;
   }
 }
+.section-center {
+  width: 100vw;
+}
+.section-title {
+  text-align: center;
+  padding: 2rem 2rem;
+}
 /*  global classes */
 
 /* Header on banner */
@@ -164,7 +172,7 @@ p {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 10rem;
+  height: 8rem;
   width: 15rem;
   background: white;
   display: grid;
@@ -173,7 +181,7 @@ p {
 .img-container {
   display: grid;
   place-items: center;
-  height: 5rem;
+  height: 4.5rem;
   width: 4rem;
 }
 .logo-img {
@@ -187,5 +195,95 @@ p {
 .school-name h4 {
   text-transform: uppercase;
   font-size: 2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0rem;
+}
+.school-name h5 {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 765px) {
+  .toggle-btn,
+  .search {
+    display: none;
+  }
+  .left-links,
+  .right-links {
+    display: grid;
+    justify-self: center;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    column-gap: 2rem;
+    padding: 0.4rem 2rem;
+  }
+  .link {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--clr-white);
+  }
+  .navbar {
+    background: var(--clr-blue);
+  }
+}
+
+/* Portals */
+.portals {
+  width: 100vw;
+  margin: 0 auto;
+}
+.list-of-portals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+.portal-1-container {
+  background: url(./img/portal1.jpg) center/cover no-repeat;
+}
+.portal-2-container {
+  background: url(./img/onlineschool2.jpg) center/cover no-repeat;
+}
+.portal-3-container {
+  background: url(./img/cbt.jpg) center/cover no-repeat;
+}
+.portal-4-container {
+  background: url(./img/vote2.jpg) center/cover no-repeat;
+}
+.portal-1-container,
+.portal-2-container,
+.portal-3-container,
+.portal-4-container {
+  transition: var(--transition);
+  display: grid;
+  place-items: center;
+  width: 20rem;
+  height: 6rem;
+  margin-bottom: 2rem;
+}
+.portal-logo,
+.portal-title {
+  background: transparent;
+  color: var(--clr-blue);
+}
+.portal-logo {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.portal-title {
+  color: var(--clr-white);
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+@media screen and (min-width: 990px) {
+  .list-of-portals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1070px) {
+  .list-of-portals {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
