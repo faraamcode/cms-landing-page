@@ -13,6 +13,8 @@ Variables
 
 :root {
   /* dark shades of primary color*/
+  --clr-main-green: rgb(0, 122, 83);
+  --clr-main-grey: rgb(105, 63, 35);
   --clr-blue: rgb(0, 14, 103);
   --clr-primary-1: hsl(43, 86%, 17%);
   --clr-primary-2: hsl(43, 77%, 27%);
@@ -41,7 +43,7 @@ Variables
   --clr-white: #fff;
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
-  --transition: all 0.3s linear;
+  --transition: all 1s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -142,7 +144,8 @@ p {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background: url(./img/slide13.jpg) center/cover no-repeat fixed;
+  background: url(./img/slide13.jpg) center/cover no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
 }
 .left-links,
 .right-links {
@@ -241,21 +244,26 @@ p {
   align-items: center;
 }
 .portal-1-container {
-  background: url(./img/portal1.jpg) center/cover no-repeat;
+  background: url(./img/portal1.jpg) center/cover no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 .portal-2-container {
-  background: url(./img/onlineschool2.jpg) center/cover no-repeat;
+  background: url(./img/onlineschool2.jpg) center/cover no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
 }
 .portal-3-container {
-  background: url(./img/cbt.jpg) center/cover no-repeat;
+  background: url(./img/cbt.jpg) center/cover no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 .portal-4-container {
-  background: url(./img/vote2.jpg) center/cover no-repeat;
+  background: url(./img/vote.jpg) center/cover no-repeat,
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 .portal-1-container,
 .portal-2-container,
 .portal-3-container,
 .portal-4-container {
+  object-fit: cover;
   transition: var(--transition);
   display: grid;
   place-items: center;
@@ -277,6 +285,30 @@ p {
   font-size: 1.3rem;
   margin-top: 0;
 }
+.portal-1-container:hover {
+  background: var(--clr-blue);
+}
+.portal-1-container:hover .portal-logo {
+  color: var(--clr-white);
+}
+.portal-2-container:hover {
+  background: var(--clr-blue);
+}
+.portal-2-container:hover .portal-logo {
+  color: var(--clr-white);
+}
+.portal-3-container:hover {
+  background: var(--clr-blue);
+}
+.portal-3-container:hover .portal-logo {
+  color: var(--clr-white);
+}
+.portal-4-container:hover {
+  background: var(--clr-blue);
+}
+.portal-4-container:hover .portal-logo {
+  color: var(--clr-white);
+}
 @media screen and (min-width: 990px) {
   .list-of-portals {
     grid-template-columns: repeat(3, 1fr);
@@ -285,5 +317,102 @@ p {
 @media screen and (min-width: 1070px) {
   .list-of-portals {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* details */
+
+.school-details {
+  width: 90vw;
+  margin: 1rem auto;
+}
+.detail-1,
+.detail-2,
+.detail-3,
+.detail-4 {
+  transition: var(--transition);
+  position: relative;
+  max-width: 26rem;
+  height: 26rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+.detail-img {
+  transition: var(--transition);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.detail-short-description {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 2;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.detail-2 .detail-short-description,
+.detail-2 .detail-info {
+  background: var(--clr-main-green);
+}
+.detail-3 .detail-short-description,
+.detail-3 .detail-info {
+  background: var(--clr-main-grey);
+}
+.detail-4 .detail-short-description,
+.detail-4 .detail-info {
+  background: var(--clr-main-green);
+}
+.detail-1 .detail-info {
+  background: var(--clr-blue);
+}
+.detail-info h4 {
+  margin-top: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  border-bottom: 1px dashed var(--clr-white);
+}
+.detail-info p {
+  color: var(--clr-white);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-weight: 200;
+}
+/* detail info to be removed */
+.detail-item:hover .detail-info {
+  position: absolute;
+  width: 75%;
+  height: 80%;
+  z-index: 4;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+}
+.detail-item:hover .detail-img {
+  transform: scale(1.03);
+}
+
+@media screen and (min-width: 768px) {
+  .school-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 990px) {
+  .school-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
