@@ -556,3 +556,57 @@ p {
     font-size: 2rem;
   }
 }
+/* school admin */
+.school-admin {
+  width: 100vw;
+}
+.school-admin-container {
+  width: 90vw;
+  margin: 6rem auto;
+}
+.single-admin {
+  position: relative;
+  max-width: 30rem;
+  margin-bottom: 6rem;
+  margin-top: 4rem;
+  box-shadow: var(--dark-shadow);
+  border-radius: var(--radius);
+  padding: 2rem;
+  padding-top: 6rem;
+}
+.admin-heading {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.admin-text {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.admin-footer {
+  text-align: right;
+}
+.admin-picture-container {
+  position: absolute;
+  top: 0;
+  left: 37%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.admin-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 900px) {
+  .school-admin-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
