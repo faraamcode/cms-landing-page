@@ -219,10 +219,10 @@ p {
     justify-items: center;
     align-items: center;
     column-gap: 2rem;
-    padding: 0.4rem 2rem;
+    padding: 0rem 2rem;
   }
   .link {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: var(--clr-white);
   }
@@ -673,4 +673,61 @@ p {
 }
 .detail {
   border-right: 1px solid var(--clr-white);
+}
+
+.address h4 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.address h5 {
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+.address-container span {
+  display: block;
+  letter-spacing: var(--spacing);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 100;
+}
+.address-container .fa {
+  margin-right: 1rem;
+  color: var(--clr-main-green);
+}
+.direction {
+  padding-left: 3rem;
+}
+.direction h5 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.direction a {
+  display: block;
+  font-size: 1rem;
+  color: var(--clr-white);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.direction a:hover {
+  color: var(--clr-blue);
+  text-decoration: underline;
+}
+.school-news {
+  border-right: 0;
+  margin-left: 2rem;
+}
+.school-news h4 {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.school-news li {
+  margin-bottom: 0.8rem;
+}
+/* header */
+.header-container {
+  background: rgb(224, 224, 224);
+  width: 100vw;
+  height: 1.5rem;
 }
