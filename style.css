@@ -143,7 +143,7 @@ p {
 /* Header on banner */
 .banner {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 1.5rem);
   width: 100vw;
   background: var(--clr-white);
   box-shadow: var(--dark-shadow);
@@ -242,7 +242,46 @@ p {
   align-self: start;
   margin-bottom: 0;
 }
+.text-design {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  color: var(--clr-white);
+}
+.text-design h2 {
+  font-size: 4rem;
+  letter-spacing: var(--spacing);
+  margin-bottom: 0;
+}
+.text-design h5 {
+  font-size: 2rem;
+}
+.design-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  /* width: 10rem;
+  height: 4rem; */
+}
+.design-btn button {
+  margin-bottom: 0;
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  border: 0;
+  padding: 0.8rem 2rem;
+  margin-right: 4rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.design-btn .fas {
+  margin-right: 1rem;
+}
 @media screen and (min-width: 765px) {
+  .angle {
+    width: 20rem;
+    height: 38rem;
+  }
   .toggle-btn,
   .search {
     display: none;
