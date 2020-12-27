@@ -13,6 +13,8 @@ Variables
 
 :root {
   /* dark shades of primary color*/
+  --clr-main-dark-blue: rgb(190, 220, 230);
+  --clr-main-pink: rgb(217, 63, 10);
   --clr-main-green: rgb(0, 122, 83);
   --clr-main-grey: rgb(105, 63, 35);
   --clr-blue: rgb(0, 14, 103);
@@ -145,10 +147,11 @@ p {
 /* Header on banner */
 .banner {
   position: relative;
-  height: calc(100vh - 1.5rem);
+  height: calc(100vh - 8rem);
   width: 100vw;
   background: var(--clr-white);
-  box-shadow: var(--dark-shadow);
+  overflow: hidden;
+  /* box-shadow: var(--dark-shadow); */
 }
 .left-links,
 .right-links {
@@ -161,6 +164,7 @@ p {
   background: transparent;
 }
 .toggle {
+  animation: bounce 3s infinite;
   justify-self: start;
   font-size: 2rem;
   border: 0;
@@ -251,11 +255,13 @@ p {
   color: var(--clr-white);
 }
 .text-design h2 {
+  animation: slideFromRight 5s ease-in 1;
   font-size: 4rem;
   letter-spacing: var(--spacing);
   margin-bottom: 0;
 }
 .text-design h5 {
+  animation: slideFromLeft 5s ease-in 1;
   font-size: 2rem;
 }
 .design-btn {
@@ -267,6 +273,7 @@ p {
   height: 4rem; */
 }
 .design-btn button {
+  animation: show 3s ease-in 1;
   margin-bottom: 0;
   background: var(--clr-blue);
   color: var(--clr-white);
@@ -316,81 +323,89 @@ p {
 /* Portals */
 .portals {
   width: 100vw !important;
+  margin-bottom: 4.5rem;
 }
 .list-of-portals {
-  width: 95vw;
+  width: 100vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 0;
+  height: 6.5rem;
 }
 .portal-1-container {
-  background: url(./img/portal1.jpg) center/cover no-repeat,
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  width: 100%;
+  background: var(--clr-white);
 }
 .portal-2-container {
-  background: url(./img/onlineschool2.jpg) center/cover no-repeat,
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  background: var(--clr-white);
 }
 .portal-3-container {
-  background: url(./img/cbt.jpg) center/cover no-repeat,
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background: var(--clr-white);
 }
 .portal-4-container {
-  background: url(./img/vote.jpg) center/cover no-repeat,
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background: var(--clr-white);
 }
 .portal-1-container,
 .portal-2-container,
 .portal-3-container,
 .portal-4-container {
-  object-fit: cover;
   transition: var(--transition);
   display: grid;
   place-items: center;
-
-  height: 6rem;
-  margin-bottom: 2rem;
+  border-right: 1px solid var(--clr-main-grey);
+  border-bottom: 1px solid var(--clr-main-grey);
+  height: 100%;
 }
 .portal-logo,
 .portal-title {
   background: transparent;
-  color: var(--clr-blue);
 }
 .portal-logo {
   font-size: 2rem;
   margin-bottom: 0;
 }
 .portal-title {
-  color: var(--clr-white);
   font-size: 1.3rem;
   margin-top: 0;
 }
 .portal-1-container:hover {
-  background: var(--clr-blue);
+  background: var(--clr-main-dark-blue);
 }
 .portal-1-container:hover .portal-logo {
   color: var(--clr-white);
 }
 .portal-2-container:hover {
-  background: var(--clr-blue);
+  background: var(--clr-main-pink);
 }
 .portal-2-container:hover .portal-logo {
   color: var(--clr-white);
 }
 .portal-3-container:hover {
-  background: var(--clr-blue);
+  background: var(--clr-main-grey);
 }
 .portal-3-container:hover .portal-logo {
   color: var(--clr-white);
 }
 .portal-4-container:hover {
-  background: var(--clr-blue);
+  background: var(--clr-main-green);
 }
 .portal-4-container:hover .portal-logo {
   color: var(--clr-white);
 }
-@media screen and (min-width: 990px) {
+.portal-1-container:hover .portal-title {
+  color: var(--clr-white);
+}
+.portal-2-container:hover .portal-title {
+  color: var(--clr-white);
+}
+.portal-3-container:hover .portal-title {
+  color: var(--clr-white);
+}
+.portal-4-container:hover .portal-title {
+  color: var(--clr-white);
+}
+/* @media screen and (min-width: 990px) {
   .list-of-portals {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -399,7 +414,7 @@ p {
   .list-of-portals {
     grid-template-columns: repeat(4, 1fr);
   }
-}
+} */
 
 /* details */
 
@@ -481,6 +496,9 @@ p {
 }
 .detail-item:hover .detail-img {
   transform: scale(1.03);
+}
+.detail-item {
+  animation: standUp 10s 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -604,6 +622,7 @@ p {
   width: 100vw;
 }
 .news-container {
+  animation: slideRight 7s 1;
   text-align: left;
   margin-left: 2rem;
 }
@@ -625,6 +644,7 @@ p {
   align-items: center;
 }
 .single-event-container {
+  animation: slideLeft 7s 1;
   position: relative;
   max-width: 20rem;
   box-shadow: var(--dark-shadow);
@@ -845,6 +865,7 @@ p {
   margin-right: 1rem;
 }
 .social-media {
+  text-align: center;
   padding-right: 2rem;
   justify-self: end;
   display: grid;
@@ -852,4 +873,112 @@ p {
   justify-items: center;
   align-items: center;
   column-gap: 1rem;
+}
+
+/* animation */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(-200px);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateX(100);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(200px);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateX(100);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(-50px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(50px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes standUp {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
