@@ -806,6 +806,7 @@ p {
   margin-bottom: 2rem;
 }
 .address-container span {
+  color: wheat;
   display: block;
   letter-spacing: var(--spacing);
   margin-bottom: 0.5rem;
@@ -814,7 +815,7 @@ p {
 }
 .address-container .fa {
   margin-right: 1rem;
-  color: var(--clr-main-green);
+  color: var(--clr-main-dark-blue);
 }
 .direction {
   padding-left: 3rem;
@@ -826,14 +827,16 @@ p {
 }
 .direction a {
   display: block;
-  font-size: 1rem;
-  color: var(--clr-white);
   transition: var(--transition);
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: var(--spacing);
 }
+.direction-link {
+  color: wheat;
+  font-size: 15px;
+}
 .direction a:hover {
-  color: var(--clr-blue);
+  color: var(--clr-main-green);
   text-decoration: underline;
 }
 .school-news {
@@ -846,6 +849,7 @@ p {
 }
 .school-news li {
   margin-bottom: 0.8rem;
+  color: wheat;
 }
 /* header */
 .header-container {
@@ -981,4 +985,32 @@ p {
     transform: scale(1);
     opacity: 1;
   }
+}
+/* copied banner and topbar design */
+.copy {
+  box-shadow: var(--dark-shadow);
+}
+.banner-copy {
+  height: 30vh;
+}
+/* admition.html design */
+.btn-apply {
+  color: var(--clr-white);
+  background: red;
+  display: grid;
+  margin: 0 4rem;
+  padding: 1rem 0;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: var(--dark-shadow);
+  place-items: center;
+  text-align: center;
+}
+/* portals.html */
+.list-of-portals-copy {
+  margin-top: 4rem;
+}
+.portal-copy {
+  border-top: 1px solid black;
 }
